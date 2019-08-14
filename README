@@ -1,0 +1,14 @@
+human ventricular myocardial strand model with gap junction and ephaptic couplings.
+Each cell is a cylindrical morphology.
+Each cell is O'Hara et al human ventricular myocyte model, 
+replacing the INa model with tenTusscher et al human ventricular myocyte model and the IKr model with our experimental based IKr model.
+
+For compile
+
+%aclocal
+%autoconf
+%./configure
+%autoheader
+%automake -a
+%make
+
