@@ -289,11 +289,11 @@ void static_paras(FILE *fp1)
 		}
 	} else if(var.ISO==1){ // Gca--> 200%-500% increase
 		if(var.celltype == 1){ // Endo
-			ical.pca = 3.0*ical.rate*0.0001;      					// Permiability of membrane to Ca (cm/s)
+			ical.pca = var.ISO_rate*ical.rate*0.0001;      					// Permiability of membrane to Ca (cm/s)
 		} else if (var.celltype == 2){ // Mid
-			ical.pca = 3.0*ical.rate*0.0001*2.5;      					// Permiability of membrane to Ca (cm/s)
+			ical.pca = var.ISO_rate*ical.rate*0.0001*2.5;      					// Permiability of membrane to Ca (cm/s)
 		} else if (var.celltype == 3){ // Epi 
-			ical.pca = 3.0*ical.rate*0.0001*1.2;      					// Permiability of membrane to Ca (cm/s)
+			ical.pca = var.ISO_rate*ical.rate*0.0001*1.2;      					// Permiability of membrane to Ca (cm/s)
 		}
 	}
 	ical.pcana = 0.00125*ical.pca;   			// Permiability of membrane to Na (cm/s)

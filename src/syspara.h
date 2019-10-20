@@ -58,6 +58,7 @@ struct varstruct {
     double drug_conc,ic50,ec50,hill,ehill;
 	double normal_block,fraction_facil;
 	double block_rate;
+	double ISO_rate;
 
 	// Model & Cell type & Drug type
 	// model switch

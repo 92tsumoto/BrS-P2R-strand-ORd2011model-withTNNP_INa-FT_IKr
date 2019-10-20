@@ -42,6 +42,7 @@ void input_para(FILE *fpin)
 	fscanf(fpin,"%lf",&var.RGC);
 	fscanf(fpin,"%lf",&ical.rate);
 	fscanf(fpin,"%d",&var.ISO);
+	fscanf(fpin,"%lf",&var.ISO_rate);
 	fscanf(fpin,"%d",&var.stim_sw);
 	fscanf(fpin,"%d",&var.l);
 	fscanf(fpin,"%d",&var.m);
