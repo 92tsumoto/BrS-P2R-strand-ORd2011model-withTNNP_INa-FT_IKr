@@ -519,13 +519,17 @@ void static_paras(FILE *fp1)
 	var.ggx = var.gj_rate*(1.0/var.Rg);
 	printf("Rg=%e Gg=%e\n",var.Rg,var.ggx);   
 	fprintf(fp1,"Rg=%e Gg=%e\n",var.Rg,var.ggx);   
-
-	//var.Rj = var.cleft_R;
-	var.Rj = 150.0/(8.0*M_PI*var.cleft_width);
-	//var.Rj = var.Gj/(8.0*M_PI*var.cleft_width);
-	var.cleft_R=var.Rj;
-	//var.Rd = (150.0*(150.0/(8*M_PI*var.cleft_R)))/var.s1;
-	var.Rd = (var.Gj*(var.Gj/(8*M_PI*var.cleft_R)))/var.s1;
+	
+	if(var.couple_type == 1){ // cleft model
+		//var.Rj = var.cleft_R;
+		var.Rj = 150.0/(8.0*M_PI*var.cleft_width);
+		//var.Rj = var.Gj/(8.0*M_PI*var.cleft_width);
+		var.cleft_R=var.Rj;
+		//var.Rd = (150.0*(150.0/(8*M_PI*var.cleft_R)))/var.s1;
+		var.Rd = (var.Gj*(var.Gj/(8*M_PI*var.cleft_R)))/var.s1;
+	} else { // non-cleft model
+		var.Rj = 0.0; var.Rd = 0.0;
+	}
 	printf("Rd=%e, Rj=%e, cw=%e\n",var.Rd,var.Rj,var.cleft_width);
 	fprintf(fp1,"Rd=%e, Rj=%e, cw=%e\n",var.Rd,var.Rj,var.cleft_width);
 
